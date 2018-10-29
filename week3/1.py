@@ -19,9 +19,12 @@ class FileReader():
     def read(self):
         try:
             f = open(self.path, 'r')
-            lines = f.readlines()
+            lines = f.read()
             f.close()
             return lines
         except IOError:
-            return ""
+            return "empty string"
+
+reader = FileReader("example.txt")
+print(reader.read())
 
